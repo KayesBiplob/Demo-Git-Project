@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sms import views as sms_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', sms_views.index, name='index'),
+    path('product/',sms_views.product, name='product'),
+    path('productdetails/',sms_views.productdetails, name='productdetails')
 ]
